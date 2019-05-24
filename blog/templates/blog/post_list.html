@@ -1,88 +1,119 @@
 {% load static %}
 <html lang="ja">
-    <head>
-        <title>Django Girls blog</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-        <style>
+
+<head>
+    <title>960h</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <style>
+        html{
+            /* background-color: #333;
+            color: #FFF; */
+        }
         h1 a {
-    color: #FCA205;
-    font-family: 'Lobster';
-}
-body {
-    /* padding-left: 15px; */
-}
-.page-header {
-    background-color: #ff9400;
-    margin-top: 0;
-    padding: 20px 20px 20px 40px;
-}
+            /* color: #FCA205; */
+            font-family: 'Lobster';
+        }
 
-.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    color: #ffffff;
-    font-size: 36pt;
-    text-decoration: none;
-}
+        body {
+            /* padding-left: 15px; */
+            background-color: #222;
+            color: #fff;
+            width: 100%;
+            word-wrap: break-word;
+        }
 
-.content {
-    margin-left: 40px;
-}
+        .page-header {
+            /* background-color: #ff9400; */
+            background-color: #111;
+            margin-top: 0;
+            padding: 20px 20px 20px 40px;
+        }
+
+        .page-header h1,
+        .page-header h1 a,
+        .page-header h1 a:visited,
+        .page-header h1 a:active {
+            color: #ffffff;
+            font-size: 36pt;
+            text-decoration: none;
+        }
+
+        .content {
+            margin: 40px;
+        }
 
 
-h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
-}
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Lobster', cursive;
+        }
+        p{
+            font-size: 2rem;
+            line-height: 3rem
+        }
+        .date p {
+            /* color: #828282; */
+            font-size: 1.5rem;
+        }
 
-.date {
-    color: #828282;
-}
+        .save {
+            float: right;
+        }
 
-.save {
-    float: right;
-}
+        .post-form textarea,
+        .post-form input {
+            width: 100%;
+        }
 
-.post-form textarea, .post-form input {
-    width: 100%;
-}
+        .top-menu,
+        .top-menu:hover,
+        .top-menu:visited {
+            color: #ffffff;
+            float: right;
+            font-size: 26pt;
+            margin-right: 20px;
+        }
 
-.top-menu, .top-menu:hover, .top-menu:visited {
-    color: #ffffff;
-    float: right;
-    font-size: 26pt;
-    margin-right: 20px;
-}
+        .post {
+            margin-bottom: 70px;
+        }
 
-.post {
-    margin-bottom: 70px;
-}
+        .post h1 a,
+        .post h1 a:visited {
+            /* color: #000000; */
+            color: #fff;
+        }
 
-.post h1 a, .post h1 a:visited {
-    color: #000000;
-}
-        </style>
-    </head>
-    <body>
-        <div class="page-header">
-            <h1><a href="/">Django Girls Blog</a></h1>
-        </div>
+    </style>
+</head>
 
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                    {% for post in posts %}
-                        <div class="post">
-                            <div class="date">
-                                <p>published: {{ post.published_date }}</p>
-                            </div>
-                            <h1><a href="">{{ post.title }}</a></h1>
-                            <p>{{ post.text|linebreaksbr }}</p>
-                        </div>
-                    {% endfor %}
+<body>
+    <div class="page-header">
+        <h1><a href="/">960h</a></h1>
+    </div>
+
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+                {% for post in posts %}
+                <div class="post">
+                    <div class="date">
+                        <p>published: {{ post.published_date }}</p>
+                    </div>
+                    <h1><a href="">{{ post.title }}</a></h1>
+                    <p>{{ post.text|linebreaksbr }}</p>
                 </div>
+                {% endfor %}
             </div>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>
