@@ -17,6 +17,16 @@
         <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
         {% endif %}
         <h1><a href="/">960h</a></h1>
+
+        <!-- こういうのをテンプレートタグという -->
+        <!-- {% for message in 'Hello' %}
+        <div>{{ message }}</div>
+        {% endfor %}
+
+        {% if user.is_authenticated %}
+        <div>{{ py_test }}py_text</div>
+        {% endif %} -->
+
     </div>
     <div class="content container">
         <div class="row">

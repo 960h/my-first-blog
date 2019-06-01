@@ -39,4 +39,8 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
-    
+
+# つまり、siteのrootにaccessしたら、下記defが発動しますよ、ということ？
+def mytest_def(request):
+    mytest_var = 111 + 222
+    return render(request, 'blog/mytest.html', {'mytest_name': mytest_var})
